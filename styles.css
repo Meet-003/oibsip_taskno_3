@@ -1,0 +1,126 @@
+:root {
+    --background-image: url('empty-road-dark-atmosphere.jpg');
+    --text-color: #ffffff;
+    --container-bg-color: rgba(0, 0, 0, 0.301); /* Semi-transparent color */
+    --input-bg-color: rgba(31, 31, 31, 0.475); /* Semi-transparent color */
+    --input-text-color: #ffffff;
+    --button-bg-color: #1c1c1c;
+    --button-text-color: #ffffff;
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --button-hover-bg-color: #ee00ff;
+    --button-hover-text-color: #000000;
+    --button-border-color: #a600ff;
+    --output-text-color: #ffffff;
+}
+
+.light-theme {
+    --background-image: url('forest-with-grass.jpg');
+    --text-color: #121212;
+    --container-bg-color: rgba(240, 240, 240, 0.413); /* Semi-transparent color */
+    --input-bg-color: rgba(240, 240, 240, 0.267); /* Semi-transparent color */
+    --input-text-color: #121212;
+    --button-bg-color: #cccccc;
+    --button-text-color: #121212;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --button-hover-bg-color: #d1d1d1;
+    --button-hover-text-color: #000000;
+    --button-border-color: #8c8c8c;
+    --output-text-color: #121212;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.converter {
+    background-color: var(--container-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    text-align: center;
+    width: 450px;
+    height: 450px;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ee00ff;
+    border-radius: 5px;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+    box-sizing: border-box;
+}
+
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-bg-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--button-text-color);
+    font-weight: 600;
+    border: 2px solid var(--button-border-color);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale3d(1.03);
+    background-color: var(--button-hover-bg-color);
+    color: var(--button-hover-text-color);
+    box-shadow: 0 0 25px var(--button-hover-bg-color);
+}
+
+.output {
+    color: var(--output-text-color);
+    margin-top: 20px;
+    display: none; /* Hide by default */
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: opacity 1s ease-in-out;
+}
+
+.theme-toggle .sun-moon {
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+body.light-theme .theme-toggle .sun-moon {
+    content: '☀️';
+    transform: rotate(180deg);
+}
